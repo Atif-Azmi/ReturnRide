@@ -1,0 +1,60 @@
+﻿node : 
+At line:1 char:1
++ node --env-file=.env 
+index.mjs > out.log 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo         
+     : NotSpecified: (:St  
+  ring) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorI 
+   d : NativeCommandError
+ 
+node:internal/event_target:
+1118
+  process.nextTick(() => { 
+throw err; });
+                           
+^
+Error: Cannot find module '
+C:\home\runner\workspace\ar
+tifacts\api-server\dist\thr
+ead-stream-worker.mjs'
+    at 
+Module._resolveFilename (no
+de:internal/modules/cjs/loa
+der:1456:15)
+    at defaultResolveImpl (
+node:internal/modules/cjs/l
+oader:1066:19)
+    at 
+resolveForCJSWithHooks (nod
+e:internal/modules/cjs/load
+er:1071:22)
+    at Module._load (node:i
+nternal/modules/cjs/loader:
+1242:25)
+    at wrapModuleLoad (node
+:internal/modules/cjs/loade
+r:255:19)
+    at Module.executeUserEn
+tryPoint [as runMain] (node
+:internal/modules/run_main:
+154:5)
+    at 
+MessagePort.<anonymous> (no
+de:internal/main/worker_thr
+ead:223:26)
+    at [nodejs.internal.kHy
+bridDispatch] (node:interna
+l/event_target:843:20)
+    at 
+MessagePort.<anonymous> (no
+de:internal/per_context/mes
+sageport:23:28) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v24.14.1

@@ -1,0 +1,20 @@
+{
+  "name": "returnride",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "NODE_ENV=production node index.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "cors": "^2",
+    "drizzle-orm": "^0.44.1",
+    "express": "^5",
+    "google-auth-library": "^10.6.2",
+    "pg": "^8.20.0",
+    "pino": "^9",
+    "pino-http": "^10"
+  }
+}

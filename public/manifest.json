@@ -1,0 +1,35 @@
+{
+  "name": "ReturnRide",
+  "short_name": "ReturnRide",
+  "description": "Book affordable return taxi rides across India",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#6d28d9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "transportation"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "Find a Ride",
+      "short_name": "Search",
+      "url": "/search",
+      "description": "Search available return rides"
+    },
+    {
+      "name": "My Bookings",
+      "short_name": "Bookings",
+      "url": "/bookings",
+      "description": "View your booked trips"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+  <meta name="theme-color" content="#6d28d9" />
+  <meta name="description"
+    content="ReturnRide – Book affordable return taxi rides across India. Up to 50% cheaper than regular cabs. No agents, no middlemen." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="ReturnRide" />
+  <meta property="og:title" content="ReturnRide – Affordable Return Taxi Rides Across India" />
+  <meta property="og:description"
+    content="Book seats in returning intercity taxis at up to 50% off. Delhi, Mumbai, Bangalore & more." />
+  <meta property="og:type" content="website" />
+  <title>ReturnRide – Intercity Return Rides Across India</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-DkIjmTIw.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CPytavNt.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- INJECTED GOOGLE SIGN IN BUTTON -->
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <script>
+    function handleCredentialResponse(response) {
+      fetch('/api/users/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: response.credential })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log("Google Login Success!", data);
+
+          // Forcefully set common local storage keys generic React apps use
+          localStorage.setItem('user', JSON.stringify(data));
+          localStorage.setItem('auth', JSON.stringify({ state: { user: data } }));
+          localStorage.setItem('returnride-user', JSON.stringify(data));
+
+          alert('Logged in successfully via Google! Reloading dashboard...');
+          window.location.href = '/';
+        })
+        .catch(console.error);
+    }
+  </script>
+
+  <div
+    style="position: fixed; bottom: 20px; right: 20px; z-index: 99999; background: white; padding: 10px; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0,0,0,0.15);">
+    <p style="font-family: Arial, sans-serif; font-size: 11px; margin-bottom: 5px; color: #555;">Test Demo Mode Login:
+    </p>
+
+    <!-- REPLACE YOUR_GOOGLE_CLIENT_ID HERE -->
+    <div id="g_id_onload" data-client_id="515614032126-u303024g48lmlg89h47m7atoea3ij41q.apps.googleusercontent.com"
+      data-callback="handleCredentialResponse" data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+      data-shape="rectangular" data-logo_alignment="left">
+    </div>
+  </div>
+</body>
+
+</html>

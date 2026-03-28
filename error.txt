@@ -1,0 +1,1 @@
+spawnSync C:\Program Files\nodejs\ ENOENT
