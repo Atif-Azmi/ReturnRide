@@ -15,6 +15,7 @@
     "google-auth-library": "^10.6.2",
     "pg": "^8.20.0",
     "pino": "^9",
-    "pino-http": "^10"
+    "pino-http": "^10",
+    "serverless-http": "^4.0.0"
   }
 }

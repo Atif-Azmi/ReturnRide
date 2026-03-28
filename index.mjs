@@ -1,3 +1,4 @@
+import serverless from "serverless-http";
 import { createRequire as __bannerCrReq } from 'node:module';
 import __bannerPath from 'node:path';
 import __bannerUrl from 'node:url';
@@ -56942,3 +56943,4 @@ object-assign/index.js:
   *)
 */
 //# sourceMappingURL=index.mjs.map
+export default serverless(app);
